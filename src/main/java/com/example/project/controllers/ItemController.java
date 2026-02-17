@@ -31,7 +31,7 @@ public class ItemController {
     }
 
     // get all items
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<Items>> getAllItems(){
         return ResponseEntity.ok(itemService.getAllItems());
     }
