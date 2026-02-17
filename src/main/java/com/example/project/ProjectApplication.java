@@ -22,8 +22,19 @@ public class ProjectApplication {
 	}
 
 	@GetMapping
-	public ResponseEntity<String> getData(){
-		return ResponseEntity.ok("hello dipesh...");
-	}
+	public Map<String, Object> home() {
+
+        Map<String, Object> response = new HashMap<>();
+
+        response.put("message", "Backend API is running successfully");
+        response.put("frontendUrl", "https://java-test-task.netlify.app/");
+        response.put("availableEndpoints", List.of(
+                "GET /items/all",
+                "POST /items/add",
+                "GET /items/{id}"
+        ));
+
+        return response;
+    }
 
 }
